@@ -5,6 +5,7 @@ def read_from_csv(filename):
     result = {}
     with open(filename, mode='r', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
+        next(reader)                    # Пропускаем заголовки
         for row in reader:
             key = row[0]                # Ключ в словаре - id животного
             values = tuple(row[1:])     # Остальные столбцы как tuple

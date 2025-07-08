@@ -12,10 +12,6 @@ def read_from_csv(filename):
             result[key] = values
     return result
 
-# Ожидаемое EBV
-def expected_ebv(mother_ebv, father_ebv):
-    return (mother_ebv + father_ebv)/2
-
 # Собираем всех родственников
 def get_relatives(pedigree, id):
     relatives = {id: 0}

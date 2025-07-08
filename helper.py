@@ -21,13 +21,13 @@ def get_relatives(pedigree, id):
         if mother_id:
             if mother_id not in relatives:
                 relatives[mother_id] = level
-            elif level < relatives[mother_id]:
+            elif level < relatives[mother_id]:      # Учитываем предка с меньшим поколением
                 relatives[mother_id] = level
             find_relatives(mother_id, level + 1)
         if father_id:
             if father_id not in relatives:
                 relatives[father_id] = level
-            elif level < relatives[father_id]:
+            elif level < relatives[father_id]:      # Учитываем предка с меньшим поколением
                 relatives[father_id] = level
             find_relatives(father_id, level + 1)
     
